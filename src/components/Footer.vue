@@ -130,7 +130,7 @@
           <p>（周口承悦糖尿病医院）</p>
         </div>
         <div class="copyright-box">
-          <p>版权所有周口承悦糖尿病医院@Copyright 2009-2015 Rights Reserved <a href="">豫ICP备15034049号</a></p>
+          <p>版权所有周口承悦糖尿病医院@Copyright 2009-2015 Rights Reserved <a href="">豫ICP备15034049号-2</a></p>
           <p>技术支持：<a href="http://www.zqszjt.com/#/home">中启数智</a></p>
         </div>
       </div>
