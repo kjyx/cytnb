@@ -77,6 +77,7 @@ export default {
       console.log(e)
       this.loadNewsList(null,e)
     },
+
     async loadNewsList(type=null,pageNum=1,pageSize=10) {
       let query = {
       }
@@ -85,11 +86,13 @@ export default {
       query.pageSize = pageSize
       const res = await getNewsList(query)
       this.newsList = res.rows
+      console.log(res)
       this.total = res.total
     },
     toNewsInfo(id) {
       this.$router.push({path:'/newsInfo',query:{id}})
     },
+
     async searchRes() {
       let query={
         newsTitle:this.$route.query.newsTitle

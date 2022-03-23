@@ -1,8 +1,8 @@
 <template>
   <nav class="sub-nav">
-    <div class="banner">
-      <img src="@/assets/aboutme/BANNER.jpg" alt="">
-    </div>
+<!--    <div class="banner">-->
+<!--      <img src="@/assets/aboutme/BANNER.jpg" alt="">-->
+<!--    </div>-->
     <div class="wp">
       <div class="back-index">
         <div class="left">
@@ -86,7 +86,7 @@ export default {
 <style scoped lang="less">
 .sub-nav {
   width: 1920px;
-  height: 504px;
+  height: 125px;
   margin: 0 auto 90px;
   border-bottom: 1px solid #ccc;
   overflow: hidden;
@@ -94,7 +94,7 @@ export default {
     height: 375px;
     img {
       width: 1920px;
-      height: 375px;
+      height: 365px;
     }
   }
 .wp {

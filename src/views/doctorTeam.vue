@@ -2,9 +2,9 @@
 <div>
   <subNav :info-list="infoList"></subNav>
   <div class="doctor-box">
-    <div class="swiper-container swiper wp" ref="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="item in doctorList" :key="item.id" @click="openPreview(item.id)">
+    <div class="wp">
+      <ul class="ul">
+        <li v-for="item in doctorList" :key="item.id" @click="openPreview(item.id)">
           <!-- 内容 -->
           <div class="doctor-item">
             <div class="pic">
@@ -15,13 +15,18 @@
               <h2>{{ item.positiones }}</h2>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- 分页器 -->
-      <!-- 左箭头 -->
-      <!-- 右箭头 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+        </li>
+      </ul>
+      <el-pagination
+          align="center"
+          background
+          layout="prev, pager, next"
+          :total="total"
+          :page-size="query.pageSize"
+          :current-page="query.pageNum"
+          @current-change="loadDoctorList"
+      >
+      </el-pagination>
     </div>
   </div>
   <el-dialog
@@ -69,8 +74,6 @@
 
 <script>
 import subNav from '@/components/subNav'
-import "swiper/css/swiper.css";
-import Swiper from "swiper";
 import {getDoctorList,getDoctorInfo} from "@/api/api";
 export default {
   name: "doctorTeam",
@@ -82,7 +85,12 @@ export default {
       },
       dialogShow:false,
       doctorList:[],
-      doctorInfo:{}
+      doctorInfo:{},
+      query:{
+        pageNum:1,
+        pageSize:8
+      },
+      total:0
     }
   },
   computed: {
@@ -93,38 +101,27 @@ export default {
       this.doctorInfo = res.data
       console.log(this.doctorInfo)
     },
-    async loadDoctorList() {
 
-      const res = await getDoctorList()
+    async loadDoctorList(pagenum = 1) {
+     await this.$router.push({
+        path:'/doctorteam',
+        query:{
+          paheNum:pagenum,pageSize:8
+        }
+      })
+      this.query.pageNum = pagenum
+      const res = await getDoctorList(this.query)
+      console.log(res)
       this.doctorList = res.rows
-      console.log(this.doctorList)
+      this.total = res.total
     },
-    init() {
-      this.swiper = new Swiper(this.$refs.swiper, {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        autoplay:true,
-        pagination: {
-          el: ".swiper-pagination"
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        },
-        loop: true,
-        loopAdditionalSlides : 0,
-        grabCursor : true,
-        observer:true, //修改swiper自己或子元素时，自动初始化swiper
-        observeParents:true,//修改swiper的父元素时，自动初始化swiper
-      });
-    },
+
     openPreview(id) {
       this.dialogShow=true
       this.loadDoctorInfo(id)
     }
   },
   mounted() {
-    this.init()
     this.loadDoctorList()
   },
   components:{
@@ -138,18 +135,19 @@ export default {
   display: flex;
   position: relative;
   margin-bottom: 115px;
-  .last{
-    position: absolute;
-    top: 180px;
+  ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    li{
+      margin-right: 120px;
+      margin-bottom: 100px;
+      &:nth-child(4n){
+        margin-right: 0;
+      }
+    }
   }
-  .swiper {
-    width: 1400px;
-    height: 400px;
-    .swiper-slide {
-      width: 260px;
-      height: 400px;
-      display: flex;
-      justify-content: center;
       .doctor-item {
         width: 260px;
         height: 400px;
@@ -157,7 +155,6 @@ export default {
         border-radius: 5%;
         overflow: hidden;
         .pic {
-
           height: 300px;
           img {
             display: block;
@@ -183,8 +180,6 @@ export default {
         }
       }
     }
-  }
-}
 .box {
   width: 260px;
   height: 400px;

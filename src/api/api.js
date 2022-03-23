@@ -52,3 +52,18 @@ export const getRyzzList = (params) => request({
     method:'get',
     params
 })
+
+// 首页banner图
+export const reqBanner = (query) => request({
+    url:'/system/banner/list',
+    method:'get',
+    data:query
+})
+
+
+// 医院概括文章
+export const reqAboutMe = (query) =>request({
+    url:'/system/Msinfo/list',
+    method:'get',
+    dataL:query
+})

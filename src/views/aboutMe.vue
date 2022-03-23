@@ -8,23 +8,16 @@
           <!-- 大盒子上半部分 -->
           <div class="entry-box_top">
             <!-- 上边盒子左半部分 -->
-            <div class="entry-left">
+            <div class="entry-left" v-for="item in aboutMe" :key="item.id">
               <!-- 内容区 -->
               <div class="entry_artlcl">
                 <!-- 内容区头部 -->
                 <div class="artlcl_caption">
-                  <h2>河南科技职业大学附属第五医院</h2>
+                  <h2>{{item.title}}</h2>
                   <span>（周口承悦糖尿病医院）</span>
                 </div>
                 <!-- 内容区文章 -->
-                <div class="artlcl_descaption">
-                  <p>我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市
-                    城镇职工、城乡居民医保定点直补单位、省内及跨省异地就医住院费用直接结算定点医疗机构。</p>
-                  <p>我院聘请省、市知名专家教授，组建强大专家团队，技术力量雄厚，是以内分泌糖尿病为核心科室，开展足病科、眼科、心脑血管科、呼吸内科、甲状腺科、中医科、骨科、骨骼矫形科、疼痛康复科、儿童生长发育科、不育不孕科、营养科以及健康体检中心等特色科室的“大专科、小综合”医院。
-                  </p>
-                  <p>我院规模宏大，环境优美，设施设备先进齐全，拥有美国GE CT、核磁共振、数字化DR、德国罗氏电化
-                    学发光仪、日本希森美康血液分析仪、美国感觉神经定量测量仪、美国VISTA周围血管诊断系统、美力敦胰岛素泵、韩国双能X线骨密度测定仪、挪威奥菲全自动特种蛋白分析系统、无散瞳眼底照相仪、眼底激光治疗仪等高端诊疗设备和专业体检设备。
-                  </p>
+                <div class="artlcl_descaption" v-html="item.conter">
                 </div>
               </div>
             </div>
@@ -89,6 +82,7 @@ import  subBanner from '@/components/subBanner'
 import subNav from "@/components/subNav";
 import "swiper/css/swiper.css";
 import Swiper from "swiper";
+import {reqAboutMe} from "../api/api";
 export default {
   name: "aboutMe",
   data() {
@@ -118,7 +112,8 @@ export default {
           title:'荣誉资质',
           path:'/ryzz'
         }
-      ]
+      ],
+      aboutMe:[]
      }
      },
   methods: {
@@ -140,9 +135,19 @@ export default {
         grabCursor : true,
       });
     },
+    async getAboutMe(){
+      let query = {
+        pageNum:1,
+        pageSize:10
+      }
+      let result = await reqAboutMe(query)
+      console.log(result)
+      this.aboutMe = result.rows
+    }
   },
   mounted() {
     this.init()
+    this.getAboutMe()
   },
   components:{
     subBanner,
@@ -191,17 +196,11 @@ span{
 }
 .artlcl_descaption{
   margin-top: 36px;
-p{
   font-size: 17px;
-  font-weight: 400;
-&:nth-child(2){
-   padding-top: 67px;
- }
-&:nth-child(3){
-   padding-top: 58px;
-   line-height: 1.5em;
- }
-}
+  /deep/p{
+    text-indent: 2em;
+    margin-bottom: 30px;
+  }
 }
 }
 }

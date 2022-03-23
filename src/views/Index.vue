@@ -2,14 +2,8 @@
 <div class="index">
   <div class="banneer" >
     <el-carousel height="700px" trigger="click" arrow="never" :interval=2000>
-      <el-carousel-item>
-        <img src="@/assets/indexPic/banner.png" alt="">
-      </el-carousel-item>
-      <el-carousel-item>
-        <img src="@/assets/indexPic/banner01.png" alt="">
-      </el-carousel-item>
-      <el-carousel-item>
-        <img src="@/assets/indexPic/banner02.png" alt="">
+      <el-carousel-item v-for="item in bannerList" :key="item.id">
+        <img :src="`${$store.state.baseUrl}${item.image}`" alt="">
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -233,6 +227,7 @@ import 'animate.css'
 import "swiper/css/swiper.css";
 import Swiper from "swiper";
 import  { getDepartmentList,getNewsList,getKangFuList } from '@/api/api'
+import {reqBanner} from "../api/api";
 export default {
   data() {
     return {
@@ -245,7 +240,8 @@ export default {
       kangfuList:[],
       linchuangList:[],
       yijiyiyueList:[],
-      fuzhukeshiList:[]
+      fuzhukeshiList:[],
+      bannerList:[]
     }
   },
   mounted() {
@@ -260,6 +256,7 @@ export default {
     this.loadYijiyiyue()
     this.loadFuzhu()
     console.log(this.linchuangList,this.yijiyiyueList,this.kangfuList)
+    this.getBannerList()
   },
   methods:{
     handeldialogShow(item) {
@@ -372,6 +369,17 @@ export default {
         })
       })
     },
+    // 获取banner数据
+    async getBannerList(){
+      let query = {
+        pageNum:1,
+        pageSize:10
+      }
+      let result = await reqBanner(query)
+      if(result.code === 200){
+        this.bannerList = result.rows
+      }
+    }
   },
   computed:{
   },

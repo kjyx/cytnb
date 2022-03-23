@@ -1,10 +1,10 @@
-<template>
+<template >
 <div>
   <sub-nav :info-list="infoList"/>
   <div class="main wp">
     <h1 style="text-align: center;margin-bottom: 20px">{{ newInfo.newsTitle }}</h1>
     <h3 style="text-align: center;margin-bottom: 50px">日期: {{ newInfo.createTime.slice(0,10) }} &nbsp; <router-link to="/newscenter" style="color: red">返回列表</router-link></h3>
-    <div v-html="newInfo.newsContext" style="margin-bottom: 115px">
+    <div class="box" v-html="newInfo.newsContext" style="margin-bottom: 115px">
     </div>
   </div>
 </div>
@@ -31,6 +31,7 @@ export default {
     async loadNewsInfo() {
       const res = await  getNewsInfo(this.$route.query.id)
       this.newInfo = res.data
+      document.title=this.newInfo.newsTitle+"-周口承悦糖尿病医院"
       console.log( this.newInfo)
     }
   },
@@ -53,6 +54,15 @@ export default {
   /deep/.ql-align-justify{
     max-width: 1000px;
     margin: 0 auto;
+  }
+}
+
+.box{
+  /deep/p{
+    margin: 0 200px;
+  }
+  /deep/.ql-align-justify{
+    text-indent: 2em;
   }
 }
 </style>

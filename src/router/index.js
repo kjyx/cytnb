@@ -31,6 +31,9 @@ const routes = [
     redirect:'/index',
     // component: () => import('../views/demo.vue'),
     meta:{
+      title: "河南科技职业大学第五附属医院-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -40,6 +43,9 @@ const routes = [
     name: 'Index',
     component: Index,
     meta:{
+      title: "河南科技职业大学第五附属医院-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     }
@@ -48,6 +54,9 @@ const routes = [
     path: '/ryzz',
     name: 'ryzz',
     meta:{
+      title: "荣誉资质-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -57,6 +66,9 @@ const routes = [
     path: '/doctorTeam',
     name: 'doctorTeam',
     meta:{
+      title: "医疗团队-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -68,6 +80,9 @@ const routes = [
     path: '/aboutme',
     name: 'aboutme',
     meta:{
+      title: "关于我们-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -77,6 +92,9 @@ const routes = [
     path: '/yywh',
     name: '医院文化',
     meta:{
+      title: "医院文化-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -86,6 +104,9 @@ const routes = [
     path: '/ksdh',
     name: '科室导航',
     meta:{
+      title: "科室导航-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -95,6 +116,9 @@ const routes = [
     path: '/newscenter',
     name: '新闻中心',
     meta:{
+      title: "新闻中心-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -104,6 +128,9 @@ const routes = [
     path: '/departmentInfo',
     name: '科室详情',
     meta:{
+      title: "科室详情-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -113,6 +140,9 @@ const routes = [
     path: '/contactUs',
     name: '联系我们',
     meta:{
+      title: "联系我们-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -122,6 +152,9 @@ const routes = [
     path: '/yibaozhengce',
     name: '医保政策',
     meta:{
+      title: "医保政策-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -131,6 +164,9 @@ const routes = [
     path: '/tijianxuzhi',
     name: '体检须知',
     meta:{
+      title: "体检须知-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -140,6 +176,9 @@ const routes = [
     path: '/message',
     name: '联系我们',
     meta:{
+      title:"联系我们-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -149,6 +188,9 @@ const routes = [
     path: '/yrym',
     name: '院容院貌',
     meta:{
+      title: "院容院貌-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -158,6 +200,8 @@ const routes = [
     path: '/newsInfo',
     name: '新闻详情内页',
     meta:{
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -166,12 +210,19 @@ const routes = [
   {
     path: '/demo',
     name: '新闻详情内页',
+    meta:{
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
+    },
     component: () => import('../views/demo.vue'),
   },
   {
     path: '/jiuzhenliucheng',
     name: '就诊流程',
     meta:{
+      title: "就诊流程-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -181,6 +232,9 @@ const routes = [
     path: '/zhenshifenbu',
     name: '诊室分布',
     meta:{
+      title: "诊室分布-周口承悦糖尿病医院",
+      keywords:"河南科技职业大学第五附属医院,周口承悦糖尿病医院,周口糖尿病医院",
+      description:"河南科技职业大学附属第五医院(周口承悦糖尿病医院) 我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点医",
       headerShow:true,
       footerShow:true
     },
@@ -210,8 +264,14 @@ router.beforeEach((to, from, next)=>{
       next()
     }
   }
+  if(to.meta.title){
+    document.title=to.meta.title
+  }else {
+    next()
+  }
+
   if (to.name === '后台') {
-    window.location.href = 'http://139.224.68.167:9088'
+    window.location.href = 'http://admin.zkcytnb.com/'
   }
 })
 router.afterEach((to, from,next)=>{

@@ -37,7 +37,7 @@
             <router-link to="/index">医院首页</router-link>
           </li>
           <li>
-            <router-link to="/aboutme">医院概括</router-link>
+            <router-link to="/aboutme">医院概况</router-link>
             <ul class="sub-nav">
               <li @click="$router.push('/aboutme')">医院介绍</li>
 <!--              <li @click="$router.push('/doctorteam')">院长介绍</li>-->
@@ -57,7 +57,7 @@
           <li>
             <router-link to="/doctorteam">医疗团队</router-link>
             <ul class="sub-nav">
-              <li  @click="$router.push('/doctorteam')">专家介绍</li>
+              <li  @click="$router.push({path:'/doctorteam'})">专家介绍</li>
               <li @click="$router.push('/newscenter?id=12')">专家访谈</li>
               <li @click="$router.push('/newscenter?id=13')">家庭医生</li>
             </ul>
@@ -76,11 +76,11 @@
             <router-link to="/newscenter">新闻中心</router-link>
             <ul class="sub-nav">
               <li  @click="$router.push('/newscenter?id=1')">医院要闻</li>
-              <li  @click="$router.push('/newscenter?id=2')">媒体报道</li>
               <li  @click="$router.push('/newscenter?id=3')">学术交流</li>
               <li  @click="$router.push('/newscenter?id=4')">公益活动</li>
               <li  @click="$router.push('/newscenter?id=5')">专题视频</li>
               <li  @click="$router.push('/newscenter?id=6')">最美护士</li>
+              <li @click="$router.push('/newscenter?id=18')">防疫知识</li>
             </ul>
           </li>
           <li>
@@ -89,14 +89,12 @@
               <li @click="$router.push('/newscenter?id=15')">典型案例</li>
               <li @click="$router.push('/newscenter?id=16')">健康科普</li>
               <li @click="$router.push('/newscenter?id=17')">疫情报道</li>
-              <li @click="$router.push('/newscenter?id=18')">防疫知识</li>
             </ul>
           </li>
           <li>
             <router-link to="/newscenter?id=20">党建活动</router-link>
             <ul class="sub-nav">
               <li @click="$router.push('/newscenter?id=20')">党建活动</li>
-              <li @click="$router.push('/newscenter?id=21')">工会活动</li>
               <li @click="$router.push('/newscenter?id=22')">党史天天读</li>
             </ul>
           </li>
@@ -120,7 +118,7 @@ export default {
   data(){
     return{
       nowTime:"",
-      newsTitle:''
+      newsTitle:'',
     }
   },
   created() {
@@ -144,6 +142,7 @@ export default {
         nav.setAttribute('postion','fixed')
       }
     })
+
   },
   methods:{
     getTime(){

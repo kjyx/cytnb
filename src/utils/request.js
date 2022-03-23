@@ -4,7 +4,7 @@ import { Loading,Message } from 'element-ui'
 let loadingInstance = null
 
 const config = {
-    baseURL:'http://139.224.68.167:9087',
+    baseURL:'http://182.160.8.76:9087',
     timeout:5000,
 }
 let httpCode = {
