@@ -89,6 +89,7 @@
               <li @click="$router.push('/newscenter?id=15')">典型案例</li>
               <li @click="$router.push('/newscenter?id=16')">健康科普</li>
               <li @click="$router.push('/newscenter?id=17')">疫情报道</li>
+              <li @click="$router.push('/newscenter?id=24')">健康食谱</li>
             </ul>
           </li>
           <li>
