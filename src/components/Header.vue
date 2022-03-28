@@ -80,7 +80,7 @@
               <li  @click="$router.push('/newscenter?id=4')">公益活动</li>
               <li  @click="$router.push('/newscenter?id=5')">专题视频</li>
               <li  @click="$router.push('/newscenter?id=6')">最美护士</li>
-              <li @click="$router.push('/newscenter?id=18')">防疫知识</li>
+              <li @click="$router.push('/newscenter?id=17')">疫情报道</li>
             </ul>
           </li>
           <li>
@@ -88,7 +88,7 @@
             <ul class="sub-nav">
               <li @click="$router.push('/newscenter?id=15')">典型案例</li>
               <li @click="$router.push('/newscenter?id=16')">健康科普</li>
-              <li @click="$router.push('/newscenter?id=17')">疫情报道</li>
+              <li @click="$router.push('/newscenter?id=18')">防疫知识</li>
               <li @click="$router.push('/newscenter?id=24')">健康食谱</li>
             </ul>
           </li>
