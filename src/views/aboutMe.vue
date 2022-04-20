@@ -13,11 +13,11 @@
               <div class="entry_artlcl">
                 <!-- 内容区头部 -->
                 <div class="artlcl_caption">
-                  <h2>{{item.title}}</h2>
+                  <h2>{{item.manageTitle}}</h2>
                   <span>（周口承悦糖尿病医院）</span>
                 </div>
                 <!-- 内容区文章 -->
-                <div class="artlcl_descaption" v-html="item.conter">
+                <div class="artlcl_descaption" v-html="item.msInfo">
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@
                 <p>河南省健康促进医院</p>
                 <p>国家区域（华中）糖尿病诊疗中心专科联盟单位</p>
                 <p>郑州市眼科医院技术协作医院</p>
-                <p>开封市中医院技术协作医院</p>
+                <p>开封市中医院医联体合作单位</p>
                 <p>周口市内分泌糖尿病专科联盟牵头单位</p>
                 <p>周口市川汇区肢体矫治手术定点康复机构</p>
               </div>
@@ -141,8 +141,7 @@ export default {
         pageSize:10
       }
       let result = await reqAboutMe(query)
-      console.log(result)
-      this.aboutMe = result.rows
+      this.aboutMe = result.data.records
     }
   },
   mounted() {

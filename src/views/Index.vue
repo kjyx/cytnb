@@ -3,7 +3,7 @@
     <div class="banneer">
       <el-carousel height="700px" trigger="click" arrow="never" :interval=2000>
         <el-carousel-item v-for="item in bannerList" :key="item.id">
-          <img :src="`${$store.state.baseUrl}${item.image}`" alt="">
+          <img :src="item.banner" alt="">
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -194,7 +194,7 @@
           <div class="swiper-box swiper-container" ref="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="item in kangfuList" :key="item.id" @click="handeldialogShow(item)">
-                <img :src="`${$store.state.baseUrl}${item.caseFengmian}`" alt="">
+                <img :src="item.caseFengMian" alt="">
                 <div class="bottom">{{ item.caseTitle }}</div>
               </div>
             </div>
@@ -233,8 +233,7 @@
 import 'animate.css'
 import "swiper/css/swiper.css";
 import Swiper from "swiper";
-import {getDepartmentList, getNewsList, getKangFuList} from '@/api/api'
-import {reqBanner} from "../api/api";
+import {getDepartmentList, getNewsList, getKangFuList,reqBanner} from '@/api/api'
 
 export default {
   data() {
@@ -277,8 +276,7 @@ export default {
         pageSize: 10
       }
       const res = await getKangFuList(query)
-      console.log(res)
-      this.kangfuList = res.rows
+      this.kangfuList = res.data.records
     },
     async loadNewsList(type) {
       let query = {
@@ -287,7 +285,7 @@ export default {
       }
       query.newsType = type
       const res = await getNewsList(query)
-      this.newsList = res.rows
+      this.newsList = res.data.records
     },
     toDepartmentInfo(name) {
       this.$router.push({
@@ -301,7 +299,7 @@ export default {
         pageNum: 1
       }
       const res = await getDepartmentList(query)
-      res.rows.forEach((item) => {
+      res.data.records.forEach((item) => {
         this.departmentTitleList.push({
           title: item.departmentName,
           id: item.id
@@ -342,7 +340,7 @@ export default {
         departmentType: 1
       }
       const res = await getDepartmentList(query)
-      res.rows.forEach((item) => {
+      res.data.records.forEach((item) => {
         this.linchuangList.push({
           title: item.departmentName,
           id: item.id
@@ -356,7 +354,7 @@ export default {
         departmentType: 2
       }
       const res = await getDepartmentList(query)
-      res.rows.forEach((item) => {
+      res.data.records.forEach((item) => {
         this.yijiyiyueList.push({
           title: item.departmentName,
           id: item.id
@@ -370,7 +368,7 @@ export default {
         departmentType: 3
       }
       const res = await getDepartmentList(query)
-      res.rows.forEach((item) => {
+      res.data.records.forEach((item) => {
         this.fuzhukeshiList.push({
           title: item.departmentName,
           id: item.id
@@ -385,15 +383,17 @@ export default {
       } else {
         let query = {
           pageNum: 1,
-          pageSize: 10
+          pageSize: 10,
+          bannerType:1
         }
         let result = await reqBanner(query)
         if (result.code === 200) {
-          this.bannerList = result.rows
-          sessionStorage.setItem('swiperList', JSON.stringify(result.rows))
+          this.bannerList = result.data.records
+          sessionStorage.setItem('swiperList', JSON.stringify(result.data.records))
         }
       }
-    }
+    },
+
   },
   computed: {},
   metaInfo: {
@@ -666,7 +666,7 @@ export default {
 
     .swiper-box {
       height: 405px;
-      background-color: #45a8ff;
+      //background-color: #45a8ff;
 
       .swiper-slide {
         width: 560px;

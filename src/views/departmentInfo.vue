@@ -3,7 +3,7 @@
   <sub-nav :info-list="infoList"></sub-nav>
   <div class="main wp">
       <div class="top">
-        <el-image :src="`${$store.state.baseUrl}${departmentInfo.departmentFengmian}`"></el-image>
+        <el-image :src="departmentInfo.departmentFengmian"></el-image>
           <article>
               <h3>{{ departmentInfo.departmentName }}</h3>
               <div class="text-con">
@@ -19,7 +19,7 @@
               <!-- 内容 -->
               <div class="doctor-item">
                 <div class="pic">
-                  <img :src="`${$store.state.baseUrl}${item.dockerFengmian}`" alt="">
+                  <img :src="item.dockerFengmian" alt="">
                 </div>
                 <div class="text">
                   <h1>{{ item.dockerTitle }}</h1>
@@ -48,10 +48,10 @@
           <h3 class="title">康复案例</h3>
         <div class="swiper-container swiper" ref="swiperTwo">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="item in caseInfoList" :key="item.id" @click="openPreview(item.caseFengmian)">
+            <div class="swiper-slide" v-for="item in caseInfoList" :key="item.id" @click="openPreview(item.caseFengMian)">
               <div class="layout">
                 <div class="img">
-                  <img :src="`${$store.state.baseUrl}${item.caseFengmian}`" alt="">
+                  <img :src="item.caseFengMian" alt="">
                 </div>
                 <div class="item">
                   <div class="title1">{{ item.caseTitle }}</div>
@@ -143,11 +143,10 @@ export default {
       this.departmentInfo = res.data
       this.doctorList = res.dockerInfos
       this.caseInfoList = res.caseInfos
-      console.log(this.caseInfoList)
     },
     openPreview(url) {
       this.dialogShow=true
-      this.imgUrl = this.$store.state.baseUrl + url
+      this.imgUrl = url
       console.log(this.imgUrl)
     }
   },

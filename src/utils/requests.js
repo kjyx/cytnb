@@ -4,7 +4,7 @@ import { Loading,Message } from 'element-ui'
 let loadingInstance = null
 
 const config = {
-    baseURL:'http://182.160.8.76:9087',
+    baseURL:'http://182.160.8.76:9087/erupt-api',
     timeout:5000,
 }
 let httpCode = {

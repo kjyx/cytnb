@@ -11,7 +11,7 @@
           <div class="feature-images_box swiper-container" ref="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide" @click="$router.push({path:'/newsInfo',query:{id:item.id}})" v-for="item in newsList" :key="item.id">
-                <img :src="`${$store.state.baseUrl}${item.newsFengmian}`" alt="">
+                <img :src="item.newsFengMian" alt="">
               </div>
             </div>
           </div>
@@ -155,8 +155,7 @@ export default {
   methods:{
     async loadNewsList() {
       const res = await getNewsList({newsType:23})
-      console.log(res.rows)
-      this.newsList = res.rows
+      this.newsList = res.data.records
     },
     init() {
       this.swiper = new Swiper(this.$refs.swiper, {

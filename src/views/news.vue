@@ -5,7 +5,7 @@
     <li class="news-row" v-for="item in newsList" :key="item.id" @click="toNewsInfo(item.id)">
       <div class="news-row_box">
         <div class="time_box">
-          <img v-if="item.newsFengmian" :src="`${$store.state.baseUrl}${item.newsFengmian}`" alt="">
+          <img v-if="item.newsFengMian" :src="item.newsFengMian" alt="">
           <img v-else src="../assets/indexPic/newspic.jpg" alt="">
         </div>
         <div class="news_centent">

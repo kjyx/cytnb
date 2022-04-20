@@ -30,7 +30,7 @@
         </div>
       </div>
     </section>
-    <nav>
+    <nav ref="nav">
       <div class="wp">
         <ul ref="ul">
           <li>
@@ -133,17 +133,19 @@ export default {
       })
     })
     this.getTime();
-    console.log(new Date())
   },
   mounted() {
-    const nav = document.querySelector('nav')
-    window.addEventListener('scroll',()=>{
-      if (nav.offsetTop >= 170) {
-        console.log(nav.offsetTop)
-        nav.setAttribute('postion','fixed')
-      }
-    })
-
+    // let nav = this.$refs.nav
+    // let navTop = nav.offsetTop
+    // window.addEventListener('scroll',()=>{
+    //   if (window.pageYOffset >= navTop) {
+    //     nav.style.position = 'fixed'
+    //     nav.style.width = '100%'
+    //     nav.style.zIndex = '999'
+    //   }else {
+    //     nav.style.position = 'relative'
+    //   }
+    // })
   },
   methods:{
     getTime(){
@@ -157,7 +159,7 @@ export default {
       if (!this.newsTitle) return
       this.$router.push({path:'/newscenter',query:{newsTitle:this.newsTitle}})
     },
-  }
+  },
 }
 </script>
 
@@ -273,6 +275,7 @@ export default {
     }
   }
   nav {
+    top: 0;
     background-color:fade(#003E78,98%);
     height: 65px;
     max-width: 1920px;
