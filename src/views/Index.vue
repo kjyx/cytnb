@@ -214,7 +214,6 @@
         </div>
       </div>
     </section>
-
     <el-dialog
         :visible.sync="dialogShow"
         width="0px"

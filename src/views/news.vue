@@ -85,9 +85,9 @@ export default {
       query.pageNum = pageNum
       query.pageSize = pageSize
       const res = await getNewsList(query)
-      this.newsList = res.rows
+      this.newsList = res.data.records
       console.log(res)
-      this.total = res.total
+      this.total = res.data.total
     },
     toNewsInfo(id) {
       this.$router.push({path:'/newsInfo',query:{id}})
@@ -99,8 +99,8 @@ export default {
       }
       console.log(query)
       const res = await  getNewsList(query)
-      this.newsList = res.rows
-      this.total = res.total
+      this.newsList = res.data.records
+      this.total = res.data.total
     },
     subNavTitle(id) {
       switch (id) {

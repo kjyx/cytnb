@@ -65,7 +65,7 @@ export default {
         departmentType:1
       }
       const res = await getDepartmentList(query)
-      res.rows.forEach((item) => {
+      res.data.records.forEach((item) => {
         this.linchuangList.push({
           title:item.departmentName,
           id:item.id
@@ -79,7 +79,7 @@ export default {
         departmentType:2
       }
       const res = await getDepartmentList(query)
-      res.rows.forEach((item) => {
+      res.data.records.forEach((item) => {
         this.yijiyiyueList.push({
           title:item.departmentName,
           id:item.id
@@ -93,7 +93,7 @@ export default {
         departmentType:3
       }
       const res = await getDepartmentList(query)
-      res.rows.forEach((item) => {
+      res.data.records.forEach((item) => {
         this.fuzhukeshiList.push({
           title:item.departmentName,
           id:item.id

@@ -8,7 +8,7 @@
           <!-- 内容 -->
           <div class="doctor-item">
             <div class="pic">
-              <img :src="`${$store.state.baseUrl}${item.dockerFengmian}`" alt="">
+              <img :src="item.dockerFengMian" alt="">
             </div>
             <div class="text">
               <h1>{{ item.dockerTitle }}</h1>
@@ -41,7 +41,7 @@
         <div class="user-pic">
           <div class="pic">
             <el-image
-                :src="`${$store.state.baseUrl}${doctorInfo.dockerFengmian}`"
+                :src="doctorInfo.dockerFengMian"
                 fit="contain"
                 style="height: 255px;width: 206px"
                 lazy
@@ -99,7 +99,6 @@ export default {
     async loadDoctorInfo(id) {
       const res = await getDoctorInfo(id)
       this.doctorInfo = res.data
-      console.log(this.doctorInfo)
     },
 
     async loadDoctorList(pagenum = 1) {
@@ -111,9 +110,8 @@ export default {
       })
       this.query.pageNum = pagenum
       const res = await getDoctorList(this.query)
-      console.log(res)
-      this.doctorList = res.rows
-      this.total = res.total
+      this.doctorList = res.data.records
+      this.total = res.data.total
     },
 
     openPreview(id) {

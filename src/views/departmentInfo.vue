@@ -3,7 +3,7 @@
   <sub-nav :info-list="infoList"></sub-nav>
   <div class="main wp">
       <div class="top">
-        <el-image :src="departmentInfo.departmentFengmian"></el-image>
+        <el-image :src="departmentInfo.departmentFengMian"></el-image>
           <article>
               <h3>{{ departmentInfo.departmentName }}</h3>
               <div class="text-con">
@@ -19,7 +19,7 @@
               <!-- 内容 -->
               <div class="doctor-item">
                 <div class="pic">
-                  <img :src="item.dockerFengmian" alt="">
+                  <img :src="item.dockerFengMian" alt="">
                 </div>
                 <div class="text">
                   <h1>{{ item.dockerTitle }}</h1>
