@@ -66,3 +66,9 @@ export const reqAboutMe = (query) => request({
     method: 'post',
     data: query
 })
+
+// about swiper
+export const reqSystemBanner = () => request({
+    url:'/system/banner/mslist',
+    method:'post'
+})

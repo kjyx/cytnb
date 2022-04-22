@@ -223,7 +223,7 @@
     >
       <div class="dialogDiv">
         <div style="color: white">点击任意地方即可关闭</div>
-        <img :src="`${$store.state.baseUrl}${imgUrl}`" alt="">
+        <img :src="imgUrl" alt="">
       </div>
     </el-dialog>
   </div>
@@ -266,8 +266,7 @@ export default {
   },
   methods: {
     handeldialogShow(item) {
-      this.imgUrl = item.caseFengmian
-      this.dialogShow = true
+      this.$router.push({path:'/newscenter?id=15'})
     },
     async loadKangFuList() {
       let query = {
