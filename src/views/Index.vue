@@ -96,7 +96,7 @@
           <h3 class="sub-title">( 周口承悦糖尿病医院 )</h3>
           <div class="bottom-line"></div>
           <p>
-            我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市 城镇职工、城乡居民医保定点直补单位、省内及跨省异地就医住院费用直接结算定点医疗机构。
+            我院是经上级主管部门批准成立的集糖尿病预防、治疗、科研、培训于一体的国家二级专科医院。周口市城镇职工、城乡居民医保定点直补单位、省内及跨省异地就医住院费用直接结算定点医疗机构。
           </p>
           <br/>
           <br/>
@@ -261,7 +261,6 @@ export default {
     this.loadLingchuang()
     this.loadYijiyiyue()
     this.loadFuzhu()
-    console.log(this.linchuangList, this.yijiyiyueList, this.kangfuList)
     this.getBannerList()
   },
   methods: {

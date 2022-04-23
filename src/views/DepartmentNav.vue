@@ -105,7 +105,6 @@ export default {
     this.loadLingchuang()
     this.loadYijiyiyue()
     this.loadFuzhu()
-    console.log(this.linchuangList,this.yijiyiyueList,this.fuzhukeshiList)
   },
   components:{
     subNav

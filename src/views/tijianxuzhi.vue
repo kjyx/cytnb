@@ -2,7 +2,7 @@
   <div>
     <subNav :infoList="infoList"></subNav>
     <div class="main wp">
-      <img src="@/assets/indexPic/tijianxuzhi.jpg" alt="">
+      <img src="http://image.zqszys.com/cyy/tijianxuzhi%281%29.jpg" alt="">
     </div>
   </div>
 </template>

@@ -4,14 +4,13 @@
   <section class="main-box">
     <div class="wp">
       <ul>
-        <li  v-for="item in rongyuzizhiList" :key="item.id">
+        <li  v-for="item in rongyuzizhiList" :key="item.id"  @click="openPreview(item.honorFengMian)">
           <div class="img">
             <el-image
-                :src="`${$store.state.baseUrl}${item.honorFengmian}`"
+                :src="item.honorFengMian"
                 fit="cover"
                 style="width:300px;height: 275px;margin: 0 auto"
                 lazy
-                @click="openPreview(`${$store.state.baseUrl}${item.honorFengmian}`)"
             >
               <div slot="placeholder" class="image-slot">
                 加载中<span class="dot">...</span>
@@ -78,15 +77,13 @@ export default {
       let query = {
         pageNum:pagenum,
         pageSize:9,
-        honorType:1
+        honorType:2
       }
       const res = await getRyzzList(query)
-      console.log(res)
-      this.rongyuzizhiList = res.rows
-      this.total = res.total
+      this.rongyuzizhiList = res.data.records
+      this.total = res.data.total
     },
     currentChange(num){
-      console.log(num)
       this.loadRyzzList(num)
     }
   },

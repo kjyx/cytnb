@@ -35,7 +35,6 @@ export default {
   },
   methods:{
     async sendMessage() {
-        console.log(this.verify.falg)
         if (!this.verify.falg){
           this.$message.error(this.verify.msg)
           return

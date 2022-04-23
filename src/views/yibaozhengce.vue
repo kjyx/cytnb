@@ -1,47 +1,48 @@
 <template>
-<div>
-  <subNav :infoList="infoList" :userNavList="userNavList"></subNav>
-  <div class="main wp">
-    <img src="@/assets/indexPic/yibaozhengce.jpg" alt="">
+  <div>
+    <subNav :infoList="infoList" :userNavList="userNavList"></subNav>
+    <div class="main wp">
+      <img src="http://image.zqszys.com/cyy/yibaozhengce%281%29.jpg" alt="">
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import subNav from "@/components/subNav";
+
 export default {
   name: "yibaozhengce",
   data() {
     return {
       infoList: {
-        title:'医保政策',
-        path:'/yibaozhengce'
+        title: '医保政策',
+        path: '/yibaozhengce'
       },
-      userNavList:[
+      userNavList: [
         {
-          title:'专家门诊',
-          path:'/doctorteam'
+          title: '专家门诊',
+          path: '/doctorteam'
         },
         {
-          title:'诊室分布',
-          path:'/zhenshifenbu'
+          title: '诊室分布',
+          path: '/zhenshifenbu'
         },
         {
-          title:'就诊流程',
-          path:'/jiuzhenliucheng'
+          title: '就诊流程',
+          path: '/jiuzhenliucheng'
         },
         {
-          title:'医保报销',
-          path:'/yibaozhengce'
+          title: '医保报销',
+          path: '/yibaozhengce'
         },
         {
-          title:'体检须知',
-          path:'/tijianxuzhi'
+          title: '体检须知',
+          path: '/tijianxuzhi'
         },
-      ]
+      ],
     }
   },
-  components:{
+  components: {
     subNav
   }
 }

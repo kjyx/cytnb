@@ -147,7 +147,6 @@ export default {
     openPreview(url) {
       this.dialogShow=true
       this.imgUrl = url
-      console.log(this.imgUrl)
     }
   },
   mounted() {

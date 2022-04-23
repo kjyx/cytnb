@@ -2,43 +2,44 @@
   <div>
     <sub-nav :infoList="infoList" :userNavList="userNavList"></sub-nav>
     <div class="wp">
-      <img src="@/assets/indexPic/jiuzhenliucheng.jpg" alt="">
+      <img src="http://image.zqszys.com/cyy/jiuzhenliucheng%281%29.jpg" alt="">
     </div>
   </div>
 </template>
 
 <script>
 import SubNav from "@/components/subNav";
+
 export default {
   name: "jiuzhenliucheng",
   data() {
     return {
       infoList: {
-        title:'就诊流程',
-        path:'/jiuzhenliucheng'
+        title: '就诊流程',
+        path: '/jiuzhenliucheng'
       },
-      userNavList:[
+      userNavList: [
         {
-          title:'专家门诊',
-          path:'/doctorteam'
+          title: '专家门诊',
+          path: '/doctorteam'
         },
         {
-          title:'诊室分布',
-          path:'/zhenshifenbu'
+          title: '诊室分布',
+          path: '/zhenshifenbu'
         },
         {
-          title:'就诊流程',
-          path:'/jiuzhenliucheng'
+          title: '就诊流程',
+          path: '/jiuzhenliucheng'
         },
         {
-          title:'医保报销',
-          path:'/yibaozhengce'
+          title: '医保报销',
+          path: '/yibaozhengce'
         },
         {
-          title:'体检须知',
-          path:'/tijianxuzhi'
+          title: '体检须知',
+          path: '/tijianxuzhi'
         },
-      ]
+      ],
     }
   },
   components: {SubNav},

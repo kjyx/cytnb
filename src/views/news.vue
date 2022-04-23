@@ -74,7 +74,6 @@ export default {
   },
   methods:{
     currentChange(e) {
-      console.log(e)
       this.loadNewsList(null,e)
     },
 
@@ -86,7 +85,6 @@ export default {
       query.pageSize = pageSize
       const res = await getNewsList(query)
       this.newsList = res.data.records
-      console.log(res)
       this.total = res.data.total
     },
     toNewsInfo(id) {
@@ -97,7 +95,6 @@ export default {
       let query={
         newsTitle:this.$route.query.newsTitle
       }
-      console.log(query)
       const res = await  getNewsList(query)
       this.newsList = res.data.records
       this.total = res.data.total

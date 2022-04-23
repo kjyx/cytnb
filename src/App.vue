@@ -10,23 +10,23 @@
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
+
 export default {
-  components:{
-    Header,Footer
+  components: {
+    Header, Footer
   },
   mounted() {
+    sessionStorage.setItem('imageObj', JSON.stringify(this.imageObj))
   },
   data() {
     return {
     }
   },
-  metaInfo:{
-    title:"承悦糖尿病医院",
-    meta:{
-    }
+  metaInfo: {
+    title: "承悦糖尿病医院",
+    meta: {}
   },
-  watch: {
-  },
+  watch: {},
 }
 </script>
 <style lang="less">
